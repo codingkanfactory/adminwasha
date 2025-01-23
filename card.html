@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kartu Pesan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+    <style>
+        body {
+            font-family: 'Nunito', sans-serif;
+            background-color: #f7f9fc;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        .card {
+            width: 280px;
+            height: auto;
+            border-radius: 16px;
+            background: linear-gradient(135deg, #4f46e5, #3b82f6);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            color: white;
+            position: relative;
+        }
+
+        .card .image {
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            background-color: white;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card .image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card .message {
+            font-size: 0.9em;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 8px;
+        }
+
+        .download-btn {
+            margin-top: 20px;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .download-btn button {
+            background: linear-gradient(135deg, #2563eb, #3b82f6);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            padding: 8px 16px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .download-btn button:hover {
+            background: linear-gradient(135deg, #1e40af, #1d4ed8);
+        }
+    </style>
+</head>
+<body>
+    <div id="card" class="card">
+        <div class="image">
+            <!-- Gambar profil acak -->
+            <img src="logo.jpg" alt="Profil">
+        </div>
+        <div class="judul"><h2>Pesan Anonim</h2></div>
+        <div class="message" id="cardMessage">Pesan akan tampil di sini</div>
+    </div>
+    <div class="download-btn">
+        <button id="downloadBtn">Download Kartu</button>
+    </div>
+
+    <script>
+        // Ambil pesan dari localStorage
+        const message = localStorage.getItem('message');
+
+        // Tampilkan pesan di kartu
+        document.getElementById('cardMessage').textContent = message || 'Tidak ada pesan';
+
+        // Fungsi download kartu sebagai PNG
+        document.getElementById('downloadBtn').addEventListener('click', () => {
+            const card = document.getElementById('card');
+            html2canvas(card, { backgroundColor: null }).then((canvas) => {
+                const link = document.createElement('a');
+                link.download = 'kartu-pesan.png';
+                link.href = canvas.toDataURL('image/png');
+                link.click();
+            });
+        });
+    </script>
+</body>
+</html>

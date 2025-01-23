@@ -1,0 +1,101 @@
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color: #EAF6FF; /* Latar belakang utama */
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+h2 {
+    color: #3A7CA5; /* Warna judul */
+    text-align: center;
+}
+
+.card {
+    background: #FFFFFF; /* Latar belakang kartu */
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+    border-left: 5px solid #6EB5FF; /* Border kiri biru terang */
+}
+
+.card-header {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #3A7CA5; /* Warna teks header kartu */
+}
+
+.card-content p {
+    margin: 5px 0;
+    font-size: 0.95em;
+}
+
+.btn-show {
+    background-color: #6EB5FF; /* Tombol "Lihat" */
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+  justify-content: space-between;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-show:hover {
+    background-color: #3A7CA5; /* Hover tombol "Lihat" */
+}
+
+.btn-delete {
+    background-color: #FF6B6B; /* Tombol "Hapus" */
+    color: white;
+    display: flex;
+    align-items: center;
+  justify-content: space-between;
+    gap: 5px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-delete:hover {
+    background-color: #C13B3B; /* Hover tombol "Hapus" */
+}
+
+.refresh-btn {
+    display: block;
+    margin: 20px auto;
+    padding: 15px 30px;
+    background-color: #6EB5FF; /* Tombol refresh */
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.refresh-btn:hover {
+    background-color: #3A7CA5; /* Hover tombol refresh */
+}
+
+.loading {
+    color: #3A7CA5; /* Warna teks loading */
+    text-align: center;
+    font-size: 1.1em;
+}
+
+.card-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
